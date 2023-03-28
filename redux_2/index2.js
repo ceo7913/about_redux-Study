@@ -1,8 +1,11 @@
 
 const { createStore } = require('redux');
 const reducer = require ("./reducers");
-const {logIn, logOut, addPost } = require("./actions/action");
+const { addPost } = require("./actions/post");
+const { logIn, logOut } = require("./actions/user");
 
+// Redux 를 할때는 initialState 같은 구조를 짤때가 중요함
+// 아니면 아래의 action, post 등 다 엉킴
 const initialState = {
     // 폴더를 분리하는 기준은 데이터 기준 => 종속 되는것도 잘 구분 절대적이진 않음 효율적인것을 판단
     user: {
