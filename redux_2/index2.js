@@ -27,7 +27,7 @@ const firstMiddleware = (store)=>(next)=>(action)=>{
     console.log('액션 끝'); // 이러면 기본 기능 이후 실행될 action 추가한거임
 }
 const enhancer = compose(
-    applyMiddleware(firstMiddleware),
+    applyMiddleware(firstMiddleware), 
 )
 
 const store = createStore(reducer, initialState, enhancer);
